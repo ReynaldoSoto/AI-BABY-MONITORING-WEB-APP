@@ -51,12 +51,23 @@ function draw(){
        stroke(r, b, g);
        rect(objects[i].x, objects[i].y, objects[i].width, objects[i].height);
 
-       if(objects[i] == "person"){
-        document.getElementById("number_of_objects").innerHTML = "Baby is found";
-       }else{
-         document.getElementById("number_of_objects").innerHTML = "Baby is not found";
-     }
-      }
-    }
+       if(objects[i].label == "person")
+          {
+            document.getElementById("number_of_objects").innerHTML = "Baby Found";
+            console.log("stop");
+          }
+          else
+          {
+            document.getElementById("number_of_objects").innerHTML = "Baby Not Found";
+            console.log("play"); 
+          }
+         }
 
-}
+        if(objects.length == 0)
+        {
+          document.getElementById("number_of_objects").innerHTML = "Baby Not Found";
+          console.log("play"); 
+        }
+      }
+
+    }
